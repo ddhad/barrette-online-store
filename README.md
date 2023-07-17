@@ -46,12 +46,3 @@ To install and run the API, follow these steps:
       /items/
       /item/1
     <pre>
-    http://<ip_address>:<port>/item/<item_id>  
-    ```shell
-    http://<ip_address>:<port>/items/
-    ```
-    Or locally:
-    http://localhost:8000/item/<item_id>
-    ```shell
-    http://localhost:8000/items/
-    ```
