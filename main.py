@@ -34,10 +34,17 @@ def get_item(item_id: int, request: Request):
     product = {
         "id": item[0],
         "name": item[1],
-        "description": item[2],
-        "price": item[3],
-        "category": item[4],
-        "image": base64.b64encode(item[5]).decode("utf-8")
+        "price": item[2],
+        "category": item[3],
+        "series": item[4],
+        "series_description": item[5],
+        "brand": item[6],
+        "quantity": item[7],
+        "description": item[8],
+        "usage": item[9],
+        "images": [
+                base64.b64encode(img).decode('utf-8') for img in eval(item[10])
+            ]
     }
     return templates.TemplateResponse(
         "product.html", {"request": request, "product": product}
@@ -55,14 +62,19 @@ def get_all_items():
 
     products = []
     for item in items:
+        img = eval(item[10])[0]
         product = {
             "id": item[0],
             "name": item[1],
-            "description": item[2],
-            "price": item[3],
-            "category": item[4],
-            "image": base64.b64encode(item[5]).decode("utf-8")
+            "price": item[2],
+            "category": item[3],
+            "series": item[4],
+            "series_description": item[5],
+            "brand": item[6],
+            "quantity": item[7],
+            "description": item[8],
+            "usage": item[9],
+            "images": base64.b64encode(img).decode('utf-8')
         }
         products.append(product)
-
     return products

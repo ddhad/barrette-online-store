@@ -30,6 +30,13 @@ To install and run the API, follow these steps:
     pip install -r requirements.txt
     ```
 
+
+## Build database
+   ```shell
+   python3 build_db.py
+   ```
+
+
 ## Usage
 
 1. Run API  
