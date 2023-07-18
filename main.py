@@ -1,16 +1,18 @@
 import sqlite3
 import base64
 
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 
 DB_NAME = "example.db"
 
 templates = Jinja2Templates(directory="html")
 app = FastAPI()
+app.mount("/html", StaticFiles(directory="html"), name="html")
 
 app.add_middleware(
     CORSMiddleware,
