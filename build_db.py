@@ -32,7 +32,7 @@ for item in os.listdir(items_folder):
     for file in items:
         file = f'{items_folder}/{file}'
         if file.endswith('.json'):
-            with open(file) as json_file:
+            with open(file, encoding='utf-8') as json_file:
                 row['data'] = json.load(json_file)
         else:
             with open(file, 'rb') as image_file:
