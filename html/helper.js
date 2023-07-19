@@ -12,28 +12,27 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }))
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    let data1 = "";
+    counter = 0
+    const parent_element = document.querySelector('[target=""]');
+    let row = document.createElement('div');
+    row.setAttribute("class", "row justify-content-center");
 
-fetch('http://127.0.0.1:8000/items/').then((data) => {
-  return data.json();
-}).then((completeData) => {
+    const products = JSON.parse(document.getElementById('products').dataset.products)
+    products.forEach((data) => {
 
-  let data1 = "";
-  counter = 0
-  const parent_element = document.querySelector('[target=""]');
-
-  let row = document.createElement('div');
-  row.setAttribute("class", "row justify-content-center");
-
-  completeData.map((data) => {
-    imgUrl = 'data:image/png;base64,' + data.images
-    data1 += `<div class="card mb-7">
-        <img src=${imgUrl} class="card-img-top" alt="...">
+        imgUrl = 'data:image/png;base64,' + data.image
+        data1 += `<div class="card mb-7" href=/product/${data.id}>
+        <a href=/product/${data.id}>
+            <img src=${imgUrl} class="card-img-top" alt="...">
+        </a>
         <div class="card-body px-0">
             <div class="fs-xs"><a href="#" class="text-muted">${data.category}</a></div>
             <div class="fw-bold"><a href="#" class="text-body">${data.name}</a></div>
             <div class="btn-cont">
                           <div class="fw-bold text-muted">${data.price}</div>
-                        <a href="#" id="btn" class="btn btn-primary">Виж продукт</a>
+                        <a href=/product/${data.id} id="btn" class="btn btn-primary">Виж продукт</a>
                       </div>
           </div>
         </div>`
@@ -48,16 +47,11 @@ fetch('http://127.0.0.1:8000/items/').then((data) => {
       row.setAttribute("target", "");
       data1 = ""
     }
-  });
-  parent_element.appendChild(row)
-  parent_element.appendChild(document.createElement('br'));
 
-}).catch((err) => {
-  console.log(err);
-});
-
-
-
+    })
+    parent_element.appendChild(row)
+    parent_element.appendChild(document.createElement('br'));
+})
 
 const card = document.querySelector('.subscribe-card');
 document.querySelector('.form').addEventListener('submit', function (e) {

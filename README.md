@@ -50,6 +50,6 @@ To install and run the API, follow these steps:
     ```  
 2. Call endpoints  
     <pre>
-    /items/
-    /item/1
+    /
+    /product/1
     </pre>
