@@ -66,6 +66,7 @@ def get_all_items(request: Request):
 
     products = []
     for item in items:
+        print(item[10])
         product = {
             "id": item[0],
             "name": item[1],
@@ -77,7 +78,7 @@ def get_all_items(request: Request):
             "quantity": item[7],
             "description": item[8],
             "usage": item[9],
-            "image": base64.b64encode(eval(item[10])).decode('utf-8')
+            "image": base64.b64encode(eval(item[10])[0]).decode('utf-8')
         }
         products.append(product)
     return templates.TemplateResponse(
