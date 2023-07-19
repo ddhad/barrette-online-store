@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="/html/product.css">
+  <title>Шампоан за много изтощена коса</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="nav-branding">BARRETTE</a>
+        <ul class="nav-menu">
+          <li class="nav-itemm"><a href="#" class="nav-linkк" id="menu-links">Hair Care</a></li>
+          <li class="nav-itemm"><a href="#" class="nav-linkk" id="menu-links">Series Expert</a></li>
+          <li class="nav-itemm"><a href="#" class="nav-linkk" id="menu-links">Hair Styling</a></li>
+          <li class="nav-itemm"><a href="#" class="nav-linkk" id="menu-links">Beauty Tools</a></li>
+          <li class="nav-itemm"><a href="#" class="nav-linkk" id="menu-links">Metal Detox</a></li>
+          <li class="nav-itemm"><a href="#" class="nav-linkk" id="menu-links">Explore</a></li>
+          <li class="nav-itemm"><svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- content -->
+  <div id="productImages" data-product-images="{{ product.images }}"></div>
+  <section class="py-5">
+    <div class="container">
+      <div class="row gx-5">
+        <aside class="col-lg-6">
+          <div class="border rounded-4 mb-3 d-flex justify-content-center">
+            <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image">
+              <img style="max-width: 100%; max-height: 60vh; margin: auto;" id="imageBox" class="rounded-4 fit" src=""/>
+            </a>
+          </div>
+          <div class="d-flex justify-content-center mb-3">
+
+          </div>
+          <!-- thumbs-wrap.// -->
+          <!-- gallery-wrap .end// -->
+        </aside>
+        <main class="col-lg-6">
+          <div class="ps-lg-3">
+            <h4 class="title text-dark">
+              {{product.name}}
+            </h4>
+            <div class="d-flex flex-row my-3">
+              <div class="text-warning mb-1 me-2">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1">
+                  4.5
+                </span>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <span class="h5">{{product.price}}</span>
+            </div>
+
+            <p>
+              Шампоан за възстановяване по повърхността на косъма, за много изтощена коса, без утежняване.
+            </p>
+
+            <div class="row">
+              <dt class="col-3">Тип:</dt>
+              <dd class="col-9">{{product.category}}</dd>
+
+              <dt class="col-3">Серия:</dt>
+              <dd class="col-9">{{product.series}}</dd>
+
+              <dt class="col-3">Марка:</dt>
+              <dd class="col-9">{{product.brand}}</dd>
+
+              <dt class="col-3">Количество:</dt>
+              <dd class="col-9">{{product.quantity}}</dd>
+            </div>
+
+            <hr />
+
+            <div class="row mb-4">
+              <!-- col.// -->
+              <div class="col-md-4 col-6 mb-3">
+                <label class="mb-2 d-block">Количество</label>
+                <div class="input-group mb-3" style="width: 170px;">
+                  <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1"
+                    data-mdb-ripple-color="dark">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span type="text" class="form-control text-center border border-secondary" placeholder="1"
+                    aria-label="Example text with button addon" aria-describedby="button-addon1">1</span>
+                  <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2"
+                    data-mdb-ripple-color="dark">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i
+                class="me-1 fa fa-shopping-basket"></i> Добави в количка </a>
+            <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i
+                class="me-1 fa fa-heart fa-lg"></i> Запази </a>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+  <!-- content -->
+
+  <section class="bg-light border-top py-4">
+    <div class="container">
+      <div class="row gx-4">
+        <div class="col-lg-8 mb-4">
+          <div class="border rounded-2 px-3 py-2 bg-white">
+            <!-- Pills navs -->
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-details-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details"
+                  aria-selected="true">Описание</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-ingredients-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-ingredients" type="button" role="tab" aria-controls="pills-ingredients"
+                  aria-selected="false">Състав</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-use-tab" data-bs-toggle="pill" data-bs-target="#pills-use"
+                  type="button" role="tab" aria-controls="pills-use" aria-selected="false">Начин на използване</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-serie-info-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-serie-info" type="button" role="tab" aria-controls="pills-serie-info"
+                  aria-selected="false">За серията</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-details" role="tabpanel"
+                aria-labelledby="pills-details-tab">
+                <p>
+                  {{product.description}}
+                </p>
+                <div class="row mb-2">
+                  <div class="col-12 col-md-6">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-check text-success me-2"></i>Продукт с нежна и плътна текстура.</li>
+                      <li><i class="fas fa-check text-success me-2"></i>Почиства и възстановява косата, като я оставя
+                        мека и с невероятен блясък.</li>
+                    </ul>
+                  </div>
+                  <div class="col-12 col-md-6 mb-0">
+                    <ul class="list-unstyled">
+                      <li><i class="fas fa-check text-success me-2"></i>Бързо се разпенва и лесно се изплаква.</li>
+                      <li><i class="fas fa-check text-success me-2"></i>Инструментален тест след измиване с
+                        шампоан+балсам/маска/златна маска, възстановяване по повърхността на косъма.</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="tab-pane fade" id="pills-ingredients" role="tabpanel" aria-labelledby="pills-ingredients-tab">
+                {{product.ingredients}}
+              </div>
+
+              <div class="tab-pane fade" id="pills-use" role="tabpanel" aria-labelledby="pills-use-tab">
+                {{product.series_description}}
+              </div>
+
+              <div class="tab-pane fade" id="pills-serie-info" role="tabpanel" aria-labelledby="pills-serie-info-tab">
+                {{product.series_description}}
+              </div>
+
+            </div>
+            <!-- Pills content -->
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="px-0 border rounded-2 shadow-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Подобни продукти</h5>
+                <div class="d-flex mb-3">
+                  <a href="#" class="me-3">
+                    <img src="" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
+                  </a>
+                  <div class="info">
+                    <a href="#" class="nav-link mb-1">
+                      CURL EXPRESSION Крем-шампоан за интензивно подхранване ​
+                    </a>
+                    <strong class="text-dark"> $38.90</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <a href="#" class="me-3">
+                    <img src="" style="min-width: 96px; height: 96px;"
+                      class="img-md img-thumbnail" />
+                  </a>
+                  <div class="info">
+                    <a href="#" class="nav-link mb-1">
+                      BLONDIFIER Cool лилав неутрализиращ шампоан
+                    </a>
+                    <strong class="text-dark"> $29.50</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <a href="#" class="me-3">
+                    <img src="" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
+                  </a>
+                  <div class="info">
+                    <a href="#" class="nav-link mb-1"> LISS UNLIMITED Шампоан за непокорна коса </a>
+                    <strong class="text-dark"> $120.00</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <a href="#" class="me-3">
+                    <img src="" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
+                  </a>
+                  <div class="info">
+                    <a href="#" class="nav-link mb-1"> Шампоан за обновяване на дължините на косата </a>
+                    <strong class="text-dark"> $339.90</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="container-fluid bg-grey py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 ">
+              <div class="logo-part">
+                <h2 class="w-60 logo-footer">BARRETTE</h2>
+                <p>Горна Оряховица, ул. Не Знам №5</p>
+                <p>Life can't be perfect but your hair can.</p>
+              </div>
+            </div>
+            <div class="col-md-6 px-4">
+              <h6> About Salon</h6>
+              <p>But horizontal lines can only be a full pixel high.</p>
+              <a href="#" class="btn-footer"> More Info </a><br>
+              <a href="#" class="btn-footer"> Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 px-4">
+              <div class="row ">
+                <div class="col-md-6">
+                  <h6>Меню</h6>
+                  <ul>
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="#">About</a></li>
+                    <li> <a href="#">Service</a></li>
+                    <li> <a href="#">Team</a></li>
+                    <li> <a href="#">Help</a></li>
+                    <li> <a href="#">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h6>Информация</h6>
+                  <ul>
+                    <li> <a href="#">Общи условия</a></li>
+                    <li> <a href="#">Доставка и връщане</a></li>
+                    <li> <a href="#">Политика за поверителност</a></li>
+                    <li> <a href="#">Контакти</a></li>
+                    <li> <a href="#">Бисквитки</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <h6>Последвайте ни</h6>
+              <div class="social">
+                <a href="#" class="btn btn-primary btn-floating m-1"><i class="fab fa-facebook-f"
+                    aria-hidden="true"></i></a>
+                <a href="#" class="btn btn-primary btn-floating m-1"><i class="fab fa-instagram"
+                    aria-hidden="true"></i></a>
+              </div>
+              <div class="sub-container">
+                <div class="sub-card">
+                  <h2 class="title">SUBSCRIBE</h2>
+                  <p class="text">to our newsletter</p>
+                  <svg class="line" viewBox="0 0 340 110">
+                    <path
+                      d="m 20,62 h 300 c 5.07319,0 8,1.670904 8,7 0,5.329096 -2.73823,7 -8,7 -24.40669,0 -93.75,-28.499714 -145,-28.499714 -13.29554,0 -24.13778,10.98399 -24.13778,24.285714 0,13.301723 10.44743,24.237614 23.78064,24.285714 13.33321,0.0481 24.42131,-10.813044 24.42131,-24.071428 0,-13.258384 -10.82413,-24.5 -24.06417,-24.5 -46.6329,0 -128.373847,2.554751 -134.142712,-0.714429 -6.526479,-3.774256 26.308057,-20.255082 34.999996,-9.643143 4.903867,7.581481 -24.727058,37.748285 -20.714286,41.071429 5.780539,4.585834 41.58559,-45.698305 42.857143,-44.285714 1.788869,2.052458 -26.042394,35.843635 -22.946429,38.125 1.087036,0.763507 10.593224,-22.190977 18.660715,-15.982143 2.161943,1.842808 -9.534575,14.127851 -5.357143,17.5 1.588146,1.140006 10.876171,-3.735915 12.142856,-6.785715 4.42342,-9.489522 20.62535,-12.439397 19.28571,-14.285714 -2.58964,-1.846317 -18.17185,8.21922 -19.64285,13.571429 -0.667432,2.762923 0.003,7.475416 2.94643,8.214285 8.14685,2.711358 14.2347,-20.563532 17.03825,-18.181019 1.15308,0.952082 -9.13954,14.501641 -5.34183,17.823876 2.19057,1.447235 9.43338,-3.42711 12.5,-6.785714 3.06662,-3.090747 5.78766,-12.398459 8.21429,-10.714286 1.47961,1.226912 -10.72645,15.162377 -8.83929,16.964286 1.05558,0.891874 7.64823,-23.58045 18.69629,-17.321714 3.66503,2.357086 -9.07288,14.177268 -5.57129,17.143143 1.5373,1.537304 5.32487,0.597632 11.78572,-4.910715 6.46085,-5.508346 21.19805,-33.351382 23.30357,-32.053571 1.48053,1.208524 -25.5179,35.835564 -23.92858,37.589286 1.58933,1.843006 16.25079,-25.121326 22.76786,-19.107143 7.23135,7.353468 -15.77045,11.573353 -15.71428,13.839286 0.0562,2.53379 4.17316,5.462985 7.67857,5.803571 3.50541,0.340586 2.8953,-2.53583 9.82143,-6.517857 6.92613,-3.982027 30.53313,-16.352772 32.5,-14.642857 0.97719,0.939557 -22.54277,16.133127 -9.28571,18.928571 4.90102,0.88702 18.14747,-15.862165 19.28571,-15 1.11657,0.829669 -20.39244,29.235854 -16.42857,32.142857 1.05257,0.88407 8.21065,-16.928914 15.99374,-23.200825 7.7831,-6.271911 19.42199,-11.35048 18.64912,-12.51346 -1.83981,-2.419325 -12.6417,6.752679 -13.57143,11.428571 -0.92973,4.675892 0.64137,9.149855 5,9.642857 4.35863,0.493002 7.78601,-9.507611 8.76532,-12.843682 0.97931,-3.336071 3.34127,-6.934435 1.21487,-7.266498 -1.76926,-0.242777 -3.15302,6.045268 -2.95091,8.311776 0.20211,2.266508 0.10348,6.38561 3.43432,6.756934 2.88441,0.371324 11.99135,-16.657801 14.89354,-14.95853 1.31485,0.967808 -14.93493,13.219228 -8.21429,17.678572 6.72064,4.459344 20.01106,-20.369503 21.25,-19.196429 2.81731,2.873219 -15.21778,16.979645 -9.46428,20.803571 9.94993,6.770354 35.49608,-39.767387 37.85714,-37.5 3.2143,2.809447 -16.97303,19.144321 -16.42857,24.642858 0.54446,5.498537 2.14464,-0.117739 2.5,2.5 0.35536,2.617739 -3.91382,11.36668 -6.07143,10.714285 -2.06832,-0.384538 -0.81191,-3.639808 -0.0893,-4.910715 0.72263,-1.270907 1.69643,3.571429 1.69643,3.571429" />
+                  </svg>
+
+                  <form class="form" action="">
+                    <input class="input" type="email">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="/html/product.js"></script>
+</body>
+
+</html>
