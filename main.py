@@ -24,7 +24,7 @@ app.add_middleware(
 )
 
 
-@app.get("/item/{item_id}", response_class=HTMLResponse)
+@app.get("/product/{item_id}", response_class=HTMLResponse)
 def get_item(item_id: int, request: Request):
     con = sqlite3.connect(DB_NAME, check_same_thread=False)
     cur = con.cursor()
@@ -55,8 +55,8 @@ def get_item(item_id: int, request: Request):
     )
 
 
-@app.get("/items/")
-def get_all_items():
+@app.get("/", response_class=HTMLResponse)
+def get_all_items(request: Request):
     con = sqlite3.connect(DB_NAME, check_same_thread=False)
     cur = con.cursor()
     cur.execute("""SELECT * FROM items""")
@@ -78,7 +78,9 @@ def get_all_items():
             "quantity": item[7],
             "description": item[8],
             "usage": item[9],
-            "images": base64.b64encode(img).decode('utf-8')
+            "image": base64.b64encode(img).decode('utf-8')
         }
         products.append(product)
-    return products
+    return templates.TemplateResponse(
+        "helper.html", {"request": request, "products": json.dumps(products)}
+    )

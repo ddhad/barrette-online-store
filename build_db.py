@@ -37,7 +37,6 @@ for item in os.listdir(items_folder):
         else:
             with open(file, 'rb') as image_file:
                 row['images'].append(image_file.read())
-
     cursor.execute(
         "INSERT INTO items (name, price, category, series,"
         " series_description, brand, quantity, description,"
