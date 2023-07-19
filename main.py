@@ -66,7 +66,6 @@ def get_all_items(request: Request):
 
     products = []
     for item in items:
-        print(item[10])
         product = {
             "id": item[0],
             "name": item[1],
