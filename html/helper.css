@@ -120,7 +120,8 @@ a:hover {
   .nav-menu {
     position: fixed;
     left: -100%;
-    gap: 0;
+    top: 70px;
+    gap: 10;
     flex-direction: column;
     background-color: #262626;
     width: 100%;
@@ -128,7 +129,7 @@ a:hover {
     transition: 0.3s;
   }
 
-  .nav-itemm {
+  .nav-item {
     margin: 16px 0;
   }
 
@@ -136,8 +137,6 @@ a:hover {
     left: 0;
   }
 }
-
-
 
 #btn {
   background-color: black;
@@ -216,7 +215,6 @@ h2:hover:after {
   transform-origin: 0 50%;
 }
 
-
 .card {
   width: 18rem;
   height: 430px;
@@ -229,7 +227,6 @@ h2:hover:after {
   transition: 250ms;
   transform: scale(1.1);
 }
-
 
 .btn-cont {
   display: flex;
@@ -256,9 +253,6 @@ h2:hover:after {
 }
 
 /*HAIR TYPES*/
-
-
-
 .grid {
   position: relative;
   display: flex;
@@ -267,7 +261,6 @@ h2:hover:after {
   padding: 1em 0 4em;
   max-width: 100px;
   list-style: none;
-
 }
 
 .grid figure {
@@ -397,7 +390,6 @@ figure.effect-roxy:hover p {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-
 
 .h2 {
   text-align: center;
@@ -548,22 +540,12 @@ figure.effect-roxy:hover p {
   }
 }
 
-
 @media (min-width: 1270px) {
   .grid {
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
 /*HAIR TYPES*/
-
 
 /*FOOTER*/
 .bg-grey {
@@ -618,7 +600,6 @@ footer h6:after {
   border-color: violet;
   color: violet;
   text-decoration: none;
-
 }
 
 .form-footer input[type="text"] {
@@ -626,7 +607,6 @@ footer h6:after {
   border-radius: 16px 0 0 16px;
   outline: none;
   padding-left: 10px;
-
 }
 
 ::placeholder {

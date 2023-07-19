@@ -121,7 +121,7 @@ a:hover {
     position: fixed;
     left: -100%;
     top: 70px;
-    gap: 0;
+    gap: 10;
     flex-direction: column;
     background-color: #262626;
     width: 100%;
@@ -129,7 +129,7 @@ a:hover {
     transition: 0.3s;
   }
 
-  .nav-itemm {
+  .nav-item {
     margin: 16px 0;
   }
 
@@ -143,10 +143,6 @@ a:hover {
   z-index: 5;
 }
 
-
-
-
-
 /*DETAILS CONTENT*/
 #pills-details-tab,
 #pills-ingredients-tab,
@@ -154,8 +150,6 @@ a:hover {
 #pills-use-tab {
   color: black;
 }
-
-
 
 /*FOOTER*/
 .bg-grey {
@@ -218,7 +212,6 @@ footer h6:after {
   border-radius: 16px 0 0 16px;
   outline: none;
   padding-left: 10px;
-
 }
 
 ::placeholder {
@@ -262,7 +255,6 @@ footer ul li a {
 footer ul li a:hover {
   text-decoration: none;
   color: #f5f5f5 !important;
-
 }
 
 .logo-part {
