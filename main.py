@@ -25,7 +25,7 @@ app.add_middleware(
 
 
 @app.get("/product/{item_id}", response_class=HTMLResponse)
-def get_item(item_id: int, request: Request):
+def get_product(item_id: int, request: Request):
     con = sqlite3.connect(DB_NAME, check_same_thread=False)
     cur = con.cursor()
     cur.execute(f"""SELECT * FROM items WHERE id = {item_id}""")
@@ -56,7 +56,7 @@ def get_item(item_id: int, request: Request):
 
 
 @app.get("/", response_class=HTMLResponse)
-def get_all_items(request: Request):
+def get_home_page_(request: Request):
     con = sqlite3.connect(DB_NAME, check_same_thread=False)
     cur = con.cursor()
     cur.execute("""SELECT * FROM items""")
