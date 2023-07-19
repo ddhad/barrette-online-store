@@ -245,11 +245,8 @@ h2:hover:after {
 .text-body {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   overflow: hidden;
-  height: 28px;
-  font-size: 15px;
-  clear: both;
 }
 
 .btn-floating {
@@ -257,9 +254,6 @@ h2:hover:after {
   box-shadow: none;
   text-shadow: none;
 }
-
-
-
 
 /*HAIR TYPES*/
 
