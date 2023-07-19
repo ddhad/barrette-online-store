@@ -1,3 +1,4 @@
+import json
 import sqlite3
 import base64
 
@@ -12,6 +13,7 @@ DB_NAME = "example.db"
 
 templates = Jinja2Templates(directory="html")
 app = FastAPI()
+
 app.mount("/html", StaticFiles(directory="html"), name="html")
 
 app.add_middleware(
@@ -44,9 +46,9 @@ def get_item(item_id: int, request: Request):
         "quantity": item[7],
         "description": item[8],
         "usage": item[9],
-        "images": [
+        "images": json.dumps([
                 base64.b64encode(img).decode('utf-8') for img in eval(item[10])
-            ]
+            ])
     }
     return templates.TemplateResponse(
         "product.html", {"request": request, "product": product}
