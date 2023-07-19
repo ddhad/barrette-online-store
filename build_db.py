@@ -17,6 +17,7 @@ cursor.execute('''
         quantity REAL,
         description TEXT,
         usage TEXT,
+        ingredients TEXT,
         images BLOB
     )
 ''')
@@ -40,12 +41,13 @@ for item in os.listdir(items_folder):
     cursor.execute(
         "INSERT INTO items (name, price, category, series,"
         " series_description, brand, quantity, description,"
-        " usage, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " usage, ingredients, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (row['data']['name'], row['data']['price'],
          row['data']['category'], row['data']['series'],
          row['data']['series_description'], row['data']['brand'],
          row['data']['quantity'], row['data']['description'],
-         row['data']['usage'], repr(row['images']))
+         row['data']['usage'], row['data']['ingredients'],
+         repr(row['images']))
     )
 conn.commit()
 conn.close()

@@ -46,8 +46,9 @@ def get_product(item_id: int, request: Request):
         "quantity": item[7],
         "description": item[8],
         "usage": item[9],
+        "ingredients": item[10],
         "images": json.dumps([
-                base64.b64encode(img).decode('utf-8') for img in eval(item[10])
+                base64.b64encode(img).decode('utf-8') for img in eval(item[11])
             ])
     }
     return templates.TemplateResponse(
@@ -77,7 +78,8 @@ def get_home_page_(request: Request):
             "quantity": item[7],
             "description": item[8],
             "usage": item[9],
-            "image": base64.b64encode(eval(item[10])[0]).decode('utf-8')
+            "ingredients": item[10],
+            "image": base64.b64encode(eval(item[11])[0]).decode('utf-8')
         }
         products.append(product)
     return templates.TemplateResponse(
