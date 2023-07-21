@@ -18,7 +18,7 @@ const mainImg = document.getElementById("imageBox");
 const secondaryImgs = document.getElementById("secondaryImageBox");
 
 document.addEventListener('DOMContentLoaded', function () {
-  mainImg.setAttribute("src", "data:image/png;base64," + productImgs);
+  mainImg.setAttribute("src", "data:image/png;base64," + productImgs[0]);
   let data = "";
   productImgs.forEach((imgSrc) => {
     let imgEl = document.createElement("a");
