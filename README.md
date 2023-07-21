@@ -33,7 +33,9 @@ To install and run the API, follow these steps:
 
 ## Build database
    ```shell
-   python3 build_db.py
+    cd db
+    python3 build_db.py
+    cd ..
    ```
 
 
