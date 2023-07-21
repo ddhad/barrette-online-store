@@ -54,7 +54,7 @@ def download_folder_files(service, folder_id, output_dir):
 
 if __name__ == "__main__":
     if os.path.exists(TARGET_DIR):
-        os.remove(TARGET_DIR)
+        os.removedirs(TARGET_DIR)
     if not os.path.exists(TARGET_DIR):
         os.makedirs(TARGET_DIR)
 
