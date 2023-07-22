@@ -69,7 +69,7 @@ def parse_table(folder_path):
                 try:
                     with open(image, 'rb') as f:
                         images.append(f.read())
-                except IsADirectoryError:
+                except (IsADirectoryError, PermissionError):
                     pass
         else:
             images = []
