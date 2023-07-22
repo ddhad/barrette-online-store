@@ -121,7 +121,7 @@ a:hover {
     position: fixed;
     left: -100%;
     top: 70px;
-    gap: 10;
+    gap: 5;
     flex-direction: column;
     background-color: #262626;
     width: 100%;
@@ -130,7 +130,7 @@ a:hover {
   }
 
   .nav-item {
-    margin: 16px 0;
+    margin: 5px 0;
   }
 
   .nav-menu.active {

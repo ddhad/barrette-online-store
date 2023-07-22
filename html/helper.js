@@ -53,12 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     parent_element.appendChild(document.createElement('br'));
 })
 
-const card = document.querySelector('.subscribe-card');
-document.querySelector('.form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  card.classList.add('done');
-});
-
 /*SUB CARD*/
 const sub_card = document.querySelector('.sub-card');
 document.querySelector('.form').addEventListener('submit', function(e) {
