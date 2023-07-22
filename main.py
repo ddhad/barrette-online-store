@@ -1,6 +1,7 @@
 import json
 import sqlite3
 import base64
+import random
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
@@ -30,11 +31,34 @@ def get_product(item_id: int, request: Request):
     cur = con.cursor()
     cur.execute(f"""SELECT * FROM items WHERE id = {item_id}""")
     item = cur.fetchone()
-    cur.close()
-    con.close()
 
     if not item:
         return {'ERROR': 'PRODUCT NOT FOUND'}
+
+    series = item[5]
+    cur.execute(
+        f"SELECT * FROM items WHERE series = '{series}' AND id != {item_id}"
+    )
+    related_items = cur.fetchall()
+    random.shuffle(related_items)
+
+    cur.close()
+    con.close()
+
+    related_products = []
+    for r_item in related_items[0:4]:
+        r_image = eval(r_item[14])
+        if len(r_image) > 0:
+            r_image = base64.b64encode(r_image[0]).decode('utf-8')
+        else:
+            r_image = None
+        related_product = {
+            "id": r_item[0],
+            "bg_name": r_item[2],
+            "image": r_image
+        }
+        related_products.append(related_product)
+
     product = {
         "id": item[0],
         "barcode": item[1],
@@ -55,7 +79,11 @@ def get_product(item_id: int, request: Request):
             ])
     }
     return templates.TemplateResponse(
-        "product.html", {"request": request, "product": product}
+        "product.html", {
+            "request": request,
+            "product": product,
+            "related_products": related_products
+        }
     )
 
 
